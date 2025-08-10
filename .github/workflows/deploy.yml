@@ -23,28 +23,21 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create deployment archive
-        run: |
-          tar -czf deploy.tar.gz .next package.json package-lock.json public
-
       - name: Copy deployment archive to EC2
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: deploy.tar.gz
+          source: .
           target: /var/www/portfolio
 
       - name: Deploy on EC2 (install deps & start)
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www/portfolio
-            tar -xzf deploy.tar.gz
-            rm deploy.tar.gz
             npm install --production
-            pm2 restart next-app || pm2 start npm --name "next-app" -- start
