@@ -3,9 +3,10 @@ import frMessages from "./locales/fr.json";
 import i18next, { Resource } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+import { Language } from "./types";
 
 const defaultNS = "translation";
-const defaultLanguage = "en";
+const defaultLanguage = Language.EN;
 const isDevelopment = process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "test";
 
 const resources: Resource = {
