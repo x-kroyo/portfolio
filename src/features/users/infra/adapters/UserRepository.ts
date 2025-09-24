@@ -1,4 +1,4 @@
-import User from "../../domain/entities/User";
+import { User } from "../../domain/entities/User";
 import { UserRepositoryPort } from "../../domain/ports/UserRepositoryPort";
 import { injectable } from "inversify";
 
