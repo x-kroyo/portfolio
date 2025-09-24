@@ -1,7 +1,7 @@
 import { inject, injectable } from "inversify";
 import { UserRepositoryPortSymbol, type UserRepositoryPort } from "../ports/UserRepositoryPort";
 import FindUserByIdCommand from "./FindUserByIdCommand";
-import User from "../entities/User";
+import { User } from "../entities/User";
 
 @injectable()
 export default class FindUserByIdUseCase {

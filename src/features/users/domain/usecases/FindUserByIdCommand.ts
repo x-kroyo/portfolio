@@ -1,5 +1,5 @@
 type FindUserByIdCommand = {
-  readonly userId: string;
+  readonly userId: number;
 };
 
 export default FindUserByIdCommand;
