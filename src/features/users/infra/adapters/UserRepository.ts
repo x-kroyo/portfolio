@@ -6,7 +6,7 @@ import queryClient from "@/src/common/infra/api/queryClient";
 
 @injectable()
 export class UserRepository implements UserRepositoryPort {
-  async findUserById(userId: string): Promise<User | null> {
+  async findUserById(userId: number): Promise<User | null> {
     return queryClient.fetchQuery({
       queryKey: ['user', userId],
       queryFn: () => axiosApiClient.get<User>(`users/${userId}`)
