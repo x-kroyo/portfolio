@@ -14,6 +14,6 @@ export const UserProfile: React.FC<UserProfileProps> = ({ user, loading, error }
   ) : error ? (
     <div>Error: {error.message}</div>
   ) : (
-    <div>User: {user?.name}</div>
+    <div>User: {user?.name.value()}</div>
   );
 };
