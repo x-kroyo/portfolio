@@ -12,11 +12,12 @@ import { Avatar } from "../../domain/valueobjects/Avatar";
 
 @injectable()
 export class UserRepository implements UserRepositoryPort {
-  async findUserById(userId: number): Promise<User | null> {
+  async findUserById(userId: UserId): Promise<User | null> {
+    const id = userId.value();
     return queryClient.fetchQuery({
-      queryKey: ['user', userId],
+      queryKey: ['user', id],
       queryFn: async () => {
-        const data : any = await axiosApiClient.get(`users/${userId}`);
+        const data : any = await axiosApiClient.get(`users/${id}`);
         const user : User = {
           id: new UserId(data.id),
           email: new Email(data.email),
