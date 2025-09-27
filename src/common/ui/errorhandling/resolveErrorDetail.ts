@@ -1,10 +1,10 @@
 import { CommonErrorCodes } from "./CommonErrorCodes";
 import { ErrorDetail } from "./ErrorDetail";
 
-export function resolveErrorDetail(thrownError: Error): ErrorDetail | undefined {
+export function resolveErrorDetail(thrownError: Error): ErrorDetail {
   const isKnownError = thrownError instanceof Error && thrownError.constructor.name in exceptionsCodes;
   if (!isKnownError) {
-    return undefined;
+    return { code: CommonErrorCodes.UNKNOWN_ERROR };
   }
   const errorName = thrownError.constructor.name;
   const code : CommonErrorCodes = exceptionsCodes[errorName];
