@@ -2,11 +2,14 @@
 import { useInjection } from "@/src/common/infra/di/useInjection";
 import FindUserByIdUseCase from "../../domain/usecases/FindUserByIdUseCase";
 import { UserProfile } from "./UserProfile";
-import { useAsync } from "@/src/common/ui/hooks/useAsync";
 import { User } from "../../domain/entities/User";
+import { UserId } from "@/src/common/domain/valueobjects/UserId";
+import useAsyncFnWithResolvedError from "@/src/common/ui/hooks/useResolvedAsyncFn";
 
 export const UserProfileWrapper = () => {
   const findUserByIdUseCase = useInjection(FindUserByIdUseCase);
-  const { loading, error, value: user } = useAsync<() => Promise<User | null>>(() => findUserByIdUseCase.handle({ userId: 1 }));
+  const { loading, error, value: user } = useAsyncFnWithResolvedError<() => Promise<User>>(
+    () => findUserByIdUseCase.handle({ userId: new UserId(3) })
+  );
   return <UserProfile user={user} loading={loading} error={error} />;
-}
+};

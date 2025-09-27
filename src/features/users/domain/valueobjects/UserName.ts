@@ -1,8 +1,6 @@
 export class UserName {
-  private readonly _value: string;
 
-  constructor(value: string) {
-    this._value = value;
+  constructor(private readonly _value: string) {
   }
 
   public value(): string {

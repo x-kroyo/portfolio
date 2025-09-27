@@ -1,8 +1,8 @@
 export class UserId {
-  constructor(private readonly value: number) {
+  constructor(private readonly _value: number) {
   }
 
-  getValue(): number {
-    return this.value;
+  value(): number {
+    return this._value;
   }
 }

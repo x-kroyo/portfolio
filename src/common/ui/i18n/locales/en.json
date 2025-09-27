@@ -5,5 +5,8 @@
   "readDocs": "Read our docs",
   "learn": "Learn",
   "examples": "Examples",
-  "goToNextjs": "Go to nextjs.org →"
+  "goToNextjs": "Go to nextjs.org →",
+  "errors": {
+    "user_not_found": "User not found"
+  }
 }
