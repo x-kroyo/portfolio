@@ -17,18 +17,23 @@ export class UserRepository implements UserRepositoryPort {
     return queryClient.fetchQuery({
       queryKey: ['user', id],
       queryFn: async () => {
-        const data : any = await axiosApiClient.get(`users/${id}`);
-        const user : User = {
-          id: new UserId(data.id),
-          email: new Email(data.email),
-          password: new PlainPassword(data.password),
-          name: new UserName(data.name),
-          role: new Role(data.role),
-          avatar: new Avatar(data.avatar),
-          creationAt: data.creationAt,
-          updatedAt: data.updatedAt,
+        try {
+          const data : any = await axiosApiClient.get(`users/${id}`);
+
+          const user : User = {
+            id: new UserId(data.id),
+            email: new Email(data.email),
+            password: new PlainPassword(data.password),
+            name: new UserName(data.name),
+            role: new Role(data.role),
+            avatar: new Avatar(data.avatar),
+            creationAt: data.creationAt,
+            updatedAt: data.updatedAt,
+          }
+          return user;
+        } catch (error) {
+          return null;
         }
-        return user;
       }
     });
   }
