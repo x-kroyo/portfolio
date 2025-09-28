@@ -12,6 +12,6 @@ export interface User {
   readonly name: UserName;
   readonly role: Role;
   readonly avatar: Avatar;
-  readonly creationAt: Date;
+  readonly createdAt: Date;
   readonly updatedAt: Date;
 }

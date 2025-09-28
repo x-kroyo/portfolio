@@ -39,7 +39,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({ user, loading, error }
         </div>
       </div>
       <div className="border-t border-gray-800 px-6 py-4 text-xs text-gray-400">
-        <p>Created: {new Date(user!.creationAt).toLocaleDateString()}</p>
+        <p>Created: {new Date(user!.createdAt).toLocaleDateString()}</p>
         <p>Updated: {new Date(user!.updatedAt).toLocaleDateString()}</p>
       </div>
     </div>
