@@ -6,21 +6,24 @@ import { PlainPassword } from "../../../domain/valueobjects/PlainPassword";
 import { UserName } from "../../../domain/valueobjects/UserName";
 import { Role } from "../../../domain/valueobjects/Role";
 import { Avatar } from "../../../domain/valueobjects/Avatar";
+import { z } from "zod";
 
 export interface FindUserByIdApiClientRequest {
   readonly userId: number;
 }
 
-export interface FindUserByIdApiClientResponse {
-  readonly id: number;
-  readonly email: string;
-  readonly password: string;
-  readonly name: string;
-  readonly role: string;
-  readonly avatar: string;
-  readonly creationAt: Date;
-  readonly updatedAt: Date;
-}
+const findUserByIdApiClientResponseSchema = z.object({
+  id: z.number(),
+  email: z.email(),
+  password: z.string().min(6),
+  name: z.string(),
+  role: z.enum(["customer", "admin"]),
+  avatar: z.httpUrl(),
+  creationAt: z.string().refine((date) => !isNaN(Date.parse(date))),
+  updatedAt: z.string().refine((date) => !isNaN(Date.parse(date))),
+});
+
+export type FindUserByIdApiClientResponse = z.infer<typeof findUserByIdApiClientResponseSchema>;
 
 export function mapFindUserByIdApiClientResponseToUser(data: FindUserByIdApiClientResponse): User {
   return {
@@ -30,11 +33,12 @@ export function mapFindUserByIdApiClientResponseToUser(data: FindUserByIdApiClie
     name: new UserName(data.name),
     role: new Role(data.role),
     avatar: new Avatar(data.avatar),
-    createdAt: data.creationAt,
-    updatedAt: data.updatedAt,
+    createdAt: new Date(data.creationAt),
+    updatedAt: new Date(data.updatedAt),
   }
 }
 
 export async function findUserByIdApiClient(findUserByIdRequest: FindUserByIdApiClientRequest) {
-  return axiosApiClient.get<FindUserByIdApiClientResponse>(`users/${findUserByIdRequest.userId}`)
+  const responseData = await axiosApiClient.get<FindUserByIdApiClientResponse>(`users/${findUserByIdRequest.userId}`)
+  return findUserByIdApiClientResponseSchema.parse(responseData);
 }
