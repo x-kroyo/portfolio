@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DependencyList, useCallback, useRef, useState } from 'react';
 import { FunctionReturningPromise, PromiseType } from './types';
 import useMountedState from '../useMountedState';
