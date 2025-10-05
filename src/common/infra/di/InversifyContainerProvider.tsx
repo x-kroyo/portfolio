@@ -1,5 +1,5 @@
 import { Container } from "inversify";
-import { createContext, useMemo } from "react";
+import { createContext } from "react";
 import { initializeInversifyContainer } from ".";
 
 const inversifyContainer = initializeInversifyContainer();

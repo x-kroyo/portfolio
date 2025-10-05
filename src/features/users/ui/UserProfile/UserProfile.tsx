@@ -4,6 +4,7 @@ import { ErrorDetail } from "@/src/common/ui/errorhandling/ErrorDetail";
 import { TranslationMessage } from "@/src/common/ui/i18n/TranslationMessage";
 import { User } from "../../domain/entities/User";
 import { Loader } from "@/src/common/ui/components/Loader";
+import Image from "next/image";
 
 interface UserProfileProps {
   user?: User; // can technically be undefined
@@ -25,7 +26,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({ user, loading, error }
   return (
     <div className="max-w-md w-full mx-auto bg-gray-900 shadow-lg rounded-2xl overflow-hidden border border-gray-800">
       <div className="flex items-center gap-4 p-6">
-        <img
+        <Image
           src={user!.avatar.value()}
           alt={user!.name.value()}
           className="w-16 h-16 rounded-full object-cover border border-gray-700"

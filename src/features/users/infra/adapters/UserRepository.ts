@@ -15,7 +15,7 @@ export class UserRepository implements UserRepositoryPort {
         try {
           const response : FindUserByIdApiClientResponse = await findUserByIdApiClient({ userId: id });
           return mapFindUserByIdApiClientResponseToUser(response);
-        } catch (error) {
+        } catch {
           return null;
         }
       }
