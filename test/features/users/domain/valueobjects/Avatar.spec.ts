@@ -1,3 +1,4 @@
+import { expect, describe, it } from 'vitest'
 import { InvalidAvatarUrlError } from "@/src/features/users/domain/exceptions/InvalidAvatarUrlError";
 import { Avatar } from "@/src/features/users/domain/valueobjects/Avatar";
 

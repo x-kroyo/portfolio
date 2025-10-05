@@ -1,3 +1,4 @@
+import { expect, describe, it } from 'vitest'
 import { InvalidEmailException } from "@/src/features/users/domain/exceptions/InvalidEmailError";
 import { Email } from "@/src/features/users/domain/valueobjects/Email";
 
