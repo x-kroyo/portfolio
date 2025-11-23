@@ -11,5 +11,6 @@
   ],
   "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>",
   "onboarding": false,
-  "requireConfig": "ignored"
+  "requireConfig": "ignored",
+  "prCreation": "immediate"
 }
