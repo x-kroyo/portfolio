@@ -8,5 +8,6 @@
     ":enableVulnerabilityAlerts",
     ":semanticCommitTypeAll(chore)"
   ],
-  "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>"
+  "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>",
+  "onboarding": false
 }
