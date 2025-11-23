@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "globalExtends": [
     "config:best-practices",
     "group:all",
@@ -9,5 +10,6 @@
     ":semanticCommitTypeAll(chore)"
   ],
   "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>",
-  "onboarding": false
+  "onboarding": false,
+  "requireConfig": "ignored"
 }
