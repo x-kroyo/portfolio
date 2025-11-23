@@ -1,0 +1,1 @@
+export { UserProfileWrapper as UserProfile } from "./UserProfile.wrap";
