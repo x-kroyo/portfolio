@@ -22,9 +22,6 @@ pre-commit:
 
 pre-push:
   commands:
-    lint:
-      name: Lint
-      run: pnpm lint
     build:
       name: Build
       run: pnpm build
