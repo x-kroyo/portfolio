@@ -10,6 +10,7 @@ output:
   - skips
 
 pre-commit:
+  parallel: true
   commands:
     lint:
       name: Lint staged
@@ -21,6 +22,7 @@ pre-commit:
       glob: "test/**/*.spec.ts"
 
 pre-push:
+  parallel: true
   commands:
     build:
       name: Build
