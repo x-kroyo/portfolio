@@ -1,9 +1,6 @@
 {
-  "id": 8259624,
   "name": "Protect main branch with mandatory PR reviews and resolutions",
   "target": "branch",
-  "source_type": "Repository",
-  "source": "x-kroyo/portfolio",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
