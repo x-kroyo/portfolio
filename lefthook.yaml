@@ -1,44 +1,27 @@
-output:
-  - meta
-  - summary
-  - empty_summary
-  - success
-  - failure
-  - execution
-  - execution_out
-  - execution_info
-  - skips
-
 pre-commit:
   parallel: true
-  commands:
-    lint:
-      name: Lint staged
+  jobs:
+    - name: Lint staged
       run: pnpm lint --fix {staged_files}
       stage_fixed: true
-    test:
-      name: Test staged
+    - name: Test staged
       run: pnpm test {staged_files}
       glob: "test/**/*.spec.ts"
 
 pre-push:
   parallel: true
-  commands:
-    build:
-      name: Build
+  jobs:
+    - name: Build
       run: pnpm build
-    test:
-      name: Test
+    - name: Test
       run: pnpm test
 
 post-merge:
-  commands:
-    lefthook:
-      name: Install lefthook hooks
-      run: npx lefthook check-install || npx lefthook install
+  jobs:
+    - name: Install lefthook hooks
+      run: pnpm lefthook check-install || pnpm lefthook install
 
 commit-msg:
-  commands:
-    commitlint:
-      name: Lint commit message
+  jobs:
+    - name: Lint commit message
       run: pnpm commit-message-check {1}
