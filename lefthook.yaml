@@ -19,7 +19,18 @@ pre-push:
 post-merge:
   jobs:
     - name: Install lefthook hooks
-      run: pnpm lefthook check-install || pnpm lefthook install
+      skip:
+        - run: pnpm lefthook check-install
+      run: pnpm lefthook install
+
+    - name: Update dependencies
+      run: pnpm i --frozen-lockfile --reporter=silent
+
+post-checkout:
+  jobs:
+    - name: Update dependencies
+      run: pnpm i --frozen-lockfile --reporter=silent
+
 
 commit-msg:
   jobs:
