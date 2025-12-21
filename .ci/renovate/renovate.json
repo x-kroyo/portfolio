@@ -15,7 +15,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [".renovate-version"],
+      "managerFilePatterns": ["/(^|/)\\.renovate-version$/"],
       "matchStrings": ["^(?<currentValue>.+)$"],
       "depNameTemplate": "renovate",
       "datasourceTemplate": "npm",
