@@ -10,5 +10,16 @@
   ],
   "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>",
   "onboarding": false,
-  "requireConfig": "ignored"
+  "requireConfig": "ignored",
+  "repositoryCache": "enabled",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [".renovate-version"],
+      "matchStrings": ["^(?<currentValue>.+)$"],
+      "depNameTemplate": "renovate",
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "npm"
+    }
+  ]
 }
