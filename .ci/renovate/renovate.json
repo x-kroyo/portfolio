@@ -5,10 +5,9 @@
     "group:allNonMajor",
     ":rebaseStalePrs",
     ":enableVulnerabilityAlerts",
-    ":semanticPrefixChore",
-    ":disableDependencyDashboard"
+    ":semanticPrefixChore"
   ],
-  "gitAuthor": "Renovate Bot <renovate-bot@noreply.internal>",
+  "gitAuthor": "Renovate Bot <noreply@renovatebot.com>",
   "onboarding": false,
   "requireConfig": "ignored",
   "repositoryCache": "enabled",
@@ -21,5 +20,10 @@
       "datasourceTemplate": "npm",
       "versioningTemplate": "npm"
     }
-  ]
+  ],
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardTitle": "[Renovate] Dependency management board"
 }
