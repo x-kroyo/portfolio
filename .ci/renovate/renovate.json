@@ -5,7 +5,8 @@
     "group:allNonMajor",
     ":rebaseStalePrs",
     ":enableVulnerabilityAlerts",
-    ":semanticPrefixChore"
+    ":semanticPrefixChore",
+    ":semanticCommitTypeAll(chore)"
   ],
   "gitAuthor": "Renovate Bot <noreply@renovatebot.com>",
   "onboarding": false,
@@ -22,8 +23,15 @@
     }
   ],
   "major": {
-    "dependencyDashboardApproval": true
+    "dependencyDashboardApproval": true,
+    "minimumReleaseAge": "21 days"
+  },
+  "minor": {
+    "minimumReleaseAge": "7 days"
   },
   "dependencyDashboardAutoclose": true,
-  "dependencyDashboardTitle": "[Renovate] Dependency management board"
+  "dependencyDashboardTitle": "[Renovate] Dependency management board",
+  "patch": {
+    "minimumReleaseAge": "3 days"
+  }
 }
