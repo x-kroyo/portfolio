@@ -1,4 +1,4 @@
-import { InvalidEmailException } from "../exceptions/InvalidEmailError";
+import { InvalidEmailException } from "@/src/features/users/domain/exceptions/InvalidEmailError";
 
 export class Email {
   

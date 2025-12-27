@@ -1,4 +1,4 @@
-import { InvalidAvatarUrlError } from "../exceptions/InvalidAvatarUrlError";
+import { InvalidAvatarUrlError } from "@/src/features/users/domain/exceptions/InvalidAvatarUrlError";
 
 export class Avatar {
   private readonly _value: string;

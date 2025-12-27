@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node'
-import { userRepositoryPortContractTests } from '../domain/ports/userRepositoryContractTests';
+import { userRepositoryPortContractTests } from '@/test/features/users/domain/ports/userRepositoryContractTests';
 import { UserRepository } from '@/src/features/users/infra/adapters/UserRepository';
 import { beforeAll, afterEach, afterAll } from 'vitest';
 

@@ -1,8 +1,8 @@
 "use client";
 import { useInjection } from "@/src/common/infra/di/useInjection";
-import FindUserByIdUseCase from "../../domain/usecases/finduserbyid/FindUserByIdUseCase";
+import FindUserByIdUseCase from "@/src/features/users/domain/usecases/finduserbyid/FindUserByIdUseCase";
 import { UserProfile } from "./UserProfile";
-import { User } from "../../domain/entities/User";
+import { User } from "@/src/features/users/domain/entities/User";
 import { UserId } from "@/src/common/domain/valueobjects/UserId";
 import useAsyncFnWithResolvedError from "@/src/common/ui/hooks/useResolvedAsyncFn";
 

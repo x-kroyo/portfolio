@@ -1,11 +1,11 @@
 import axiosApiClient from "@/src/common/infra/api/axiosApiClient";
-import { User } from "../../../domain/entities/User";
+import { User } from "@/src/features/users/domain/entities/User";
 import { UserId } from "@/src/common/domain/valueobjects/UserId";
-import { Email } from "../../../domain/valueobjects/Email";
-import { PlainPassword } from "../../../domain/valueobjects/PlainPassword";
-import { UserName } from "../../../domain/valueobjects/UserName";
-import { Role } from "../../../domain/valueobjects/Role";
-import { Avatar } from "../../../domain/valueobjects/Avatar";
+import { Email } from "@/src/features/users/domain/valueobjects/Email";
+import { PlainPassword } from "@/src/features/users/domain/valueobjects/PlainPassword";
+import { UserName } from "@/src/features/users/domain/valueobjects/UserName";
+import { Role } from "@/src/features/users/domain/valueobjects/Role";
+import { Avatar } from "@/src/features/users/domain/valueobjects/Avatar";
 import { z } from "zod";
 
 export interface FindUserByIdApiClientRequest {

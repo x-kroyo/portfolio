@@ -1,9 +1,9 @@
 import { UserId } from "@/src/common/domain/valueobjects/UserId";
-import { PlainPassword } from "../valueobjects/PlainPassword";
-import { Email } from "../valueobjects/Email";
-import { UserName } from "../valueobjects/UserName";
-import { Role } from "../valueobjects/Role";
-import { Avatar } from "../valueobjects/Avatar";
+import { PlainPassword } from "@/src/features/users/domain/valueobjects/PlainPassword";
+import { Email } from "@/src/features/users/domain/valueobjects/Email";
+import { UserName } from "@/src/features/users/domain/valueobjects/UserName";
+import { Role } from "@/src/features/users/domain/valueobjects/Role";
+import { Avatar } from "@/src/features/users/domain/valueobjects/Avatar";
 
 export interface User {
   readonly id: UserId;
