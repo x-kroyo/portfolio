@@ -1,5 +1,5 @@
 import { UserId } from "@/src/common/domain/valueobjects/UserId";
-import { User } from "../entities/User";
+import { User } from "@/src/features/users/domain/entities/User";
 
 export interface UserRepositoryPort {
   findUserById(userId: UserId): Promise<User | null>;

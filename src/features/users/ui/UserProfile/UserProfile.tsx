@@ -2,7 +2,7 @@
 
 import { ErrorDetail } from "@/src/common/ui/errorhandling/ErrorDetail";
 import { TranslationMessage } from "@/src/common/ui/i18n/TranslationMessage";
-import { User } from "../../domain/entities/User";
+import { User } from "@/src/features/users/domain/entities/User";
 import { Loader } from "@/src/common/ui/components/Loader";
 import Image from "next/image";
 
