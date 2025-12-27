@@ -1,8 +1,8 @@
 import { DependencyList } from "react";
-import { FunctionReturningPromise } from "./useAsync/types";
-import { useAsync } from "./useAsync";
-import { ErrorDetail } from "../errorhandling/ErrorDetail";
-import { resolveErrorDetail } from "../errorhandling/resolveErrorDetail";
+import { ErrorDetail } from "@/src/common/ui/errorhandling/ErrorDetail";
+import { resolveErrorDetail } from "@/src/common/ui/errorhandling/resolveErrorDetail";
+import { FunctionReturningPromise } from "react-use/lib/misc/types";
+import { useAsync } from "react-use";
 
 export default function useAsyncFnWithResolvedError<T extends FunctionReturningPromise>(
   fn: T,
