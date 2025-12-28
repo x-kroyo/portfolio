@@ -29,6 +29,8 @@ export const UserProfile: React.FC<UserProfileProps> = ({ user, loading, error }
         <Image
           src={user!.avatar.value()}
           alt={user!.name.value()}
+          width={120}
+          height={120}
           className="w-16 h-16 rounded-full object-cover border border-gray-700"
         />
         <div>
