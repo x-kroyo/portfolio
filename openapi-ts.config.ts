@@ -20,6 +20,6 @@ export default [
     {
         input: 'src/features/users/infra/api/http/users.api.yaml',
         output: 'src/features/users/infra/api/http/generated',
-        plugins: commonPlugins('@/src/features/users/infra/api/http/client.config.ts')
+        plugins: commonPlugins('@/src/features/users/infra/api/http/client.config')
     }
 ];
