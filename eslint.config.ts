@@ -24,6 +24,7 @@ export default defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "src/**/infra/api/http/generated/**",
     "next-env.d.ts",
   ]),
 ]);

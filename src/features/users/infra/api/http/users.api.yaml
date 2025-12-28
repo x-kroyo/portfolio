@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Hey API - Users
+  version: 0.1.0
+servers:
+  - url: "{baseUrl}"
+    variables:
+      baseUrl:
+        default: http://localhost:3000
+        description: Inject NEXT_PUBLIC_API_BASE_URL at runtime
+paths:
+  /users/{id}:
+    get:
+      summary: Find user by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        "200":
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: "null"
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - password
+        - name
+        - role
+        - avatar
+        - creationAt
+        - updatedAt
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 6
+        name:
+          type: string
+        role:
+          type: string
+          enum: [customer, admin]
+        avatar:
+          type: string
+          format: uri
+        creationAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
